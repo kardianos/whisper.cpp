@@ -1,5 +1,11 @@
 # whisper.cpp
 
+```
+fish$ set -x CGO_CFLAGS_ALLOW "-mfma|-mf16c"
+bash$ export CGO_CFLAGS_ALLOW="-mfma|-mf16c"
+go get github.com/kardianos/whisper.cpp@latest
+```
+
 [![Actions Status](https://github.com/ggerganov/whisper.cpp/workflows/CI/badge.svg)](https://github.com/ggerganov/whisper.cpp/actions)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/v/whisper.cpp.svg)](https://www.npmjs.com/package/whisper.cpp/)
