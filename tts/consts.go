@@ -1,14 +1,10 @@
-package whisper
+package tts
 
 import (
 	"errors"
 
-	// Bindings
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
+	whisper "github.com/kardianos/whisper.cpp"
 )
-
-///////////////////////////////////////////////////////////////////////////////
-// ERRORS
 
 var (
 	ErrUnableToLoadModel    = errors.New("unable to load model")
@@ -17,9 +13,6 @@ var (
 	ErrUnsupportedLanguage  = errors.New("unsupported language")
 	ErrModelNotMultilingual = errors.New("model is not multilingual")
 )
-
-///////////////////////////////////////////////////////////////////////////////
-// CONSTANTS
 
 // SampleRate is the sample rate of the audio data.
 const SampleRate = whisper.SampleRate

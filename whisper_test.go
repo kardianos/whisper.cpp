@@ -6,15 +6,14 @@ import (
 	"testing"
 	"time"
 
-	// Packages
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
-	wav "github.com/go-audio/wav"
-	assert "github.com/stretchr/testify/assert"
+	"github.com/go-audio/wav"
+	whisper "github.com/kardianos/whisper.cpp"
+	"github.com/stretchr/testify/assert"
 )
 
 const (
 	ModelPath  = "models/ggml-small.en.bin"
-	SamplePath = "samples/jfk.wav"
+	SamplePath = "testdata/jfk.wav"
 )
 
 func Test_Whisper_000(t *testing.T) {

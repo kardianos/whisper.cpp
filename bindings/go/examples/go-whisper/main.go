@@ -6,8 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	// Packages
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go/pkg/whisper"
+	whisper "github.com/kardianos/whisper.cpp/tts"
 )
 
 func main() {

@@ -1,11 +1,10 @@
-package whisper_test
+package tts_test
 
 import (
 	"os"
 	"testing"
 
-	// Packages
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go/pkg/whisper"
+	whisper "github.com/kardianos/whisper.cpp/tts"
 	assert "github.com/stretchr/testify/assert"
 )
 

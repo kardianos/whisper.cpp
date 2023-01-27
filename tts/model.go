@@ -1,12 +1,11 @@
-package whisper
+package tts
 
 import (
 	"fmt"
 	"os"
 	"runtime"
 
-	// Bindings
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
+	whisper "github.com/kardianos/whisper.cpp"
 )
 
 ///////////////////////////////////////////////////////////////////////////////

@@ -1,12 +1,9 @@
-package whisper
+package tts
 
 import (
 	"io"
 	"time"
 )
-
-///////////////////////////////////////////////////////////////////////////////
-// TYPES
 
 // SegmentCallback is the callback function for processing segments in real
 // time. It is called during the Process function

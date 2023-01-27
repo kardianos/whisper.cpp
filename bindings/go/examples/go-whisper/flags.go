@@ -6,8 +6,7 @@ import (
 	"strings"
 	"time"
 
-	// Packages
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go/pkg/whisper"
+	whisper "github.com/kardianos/whisper.cpp/tts"
 )
 
 ///////////////////////////////////////////////////////////////////////////////

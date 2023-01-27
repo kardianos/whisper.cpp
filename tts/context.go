@@ -1,12 +1,11 @@
-package whisper
+package tts
 
 import (
 	"io"
 	"strings"
 	"time"
 
-	// Bindings
-	whisper "github.com/ggerganov/whisper.cpp/bindings/go"
+	whisper "github.com/kardianos/whisper.cpp"
 )
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -123,7 +122,7 @@ func (context *context) PrintTimings() {
 func (context *context) WhisperLangAutoDetect(offset_ms int, n_threads int) ([]float32, error) {
 	langProbs, err := context.model.ctx.Whisper_lang_auto_detect(offset_ms, n_threads)
 	if err != nil {
-			return nil, err
+		return nil, err
 	}
 	return langProbs, nil
 }

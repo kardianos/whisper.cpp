@@ -8,12 +8,9 @@ import (
 // CGO
 
 /*
-#include <whisper.h>
+#include "whisper.h"
 */
 import "C"
-
-///////////////////////////////////////////////////////////////////////////////
-// PUBLIC METHODS
 
 func (p *Params) SetTranslate(v bool) {
 	p.translate = toBool(v)

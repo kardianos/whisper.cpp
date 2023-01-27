@@ -5,13 +5,15 @@ import (
 	"unsafe"
 )
 
-///////////////////////////////////////////////////////////////////////////////
-// CGO
-
 /*
-#cgo LDFLAGS: -lwhisper -lm -lstdc++
+// #cgo LDFLAGS: -L ../.. -lwhisper -lm -lstdc++
+#cgo LDFLAGS: -L. -lstdc++
+#cgo CFLAGS: -I. -O3 -std=c11 -fPIC -pthread
+#cgo CXXFLAGS: -I. -O3 -std=c++11 -fPIC -pthread
 #cgo darwin LDFLAGS: -framework Accelerate
-#include <whisper.h>
+#include "whisper.h"
+// #include "../../ggml.c"
+// #include "../../whisper.cpp"
 #include <stdlib.h>
 
 extern void callNewSegment(void* user_data, int new);
@@ -48,9 +50,6 @@ static struct whisper_full_params whisper_full_default_params_cb(struct whisper_
 */
 import "C"
 
-///////////////////////////////////////////////////////////////////////////////
-// TYPES
-
 type (
 	Context          C.struct_whisper_context
 	Token            C.whisper_token
@@ -58,9 +57,6 @@ type (
 	SamplingStrategy C.enum_whisper_sampling_strategy
 	Params           C.struct_whisper_full_params
 )
-
-///////////////////////////////////////////////////////////////////////////////
-// GLOBALS
 
 const (
 	SAMPLING_GREEDY      SamplingStrategy = C.WHISPER_SAMPLING_GREEDY
@@ -82,9 +78,6 @@ var (
 	ErrConversionFailed = errors.New("whisper_convert failed")
 	ErrInvalidLanguage  = errors.New("invalid language")
 )
-
-///////////////////////////////////////////////////////////////////////////////
-// PUBLIC METHODS
 
 // Allocates all memory needed for the model and loads the model from the given file.
 // Returns NULL on failure.
