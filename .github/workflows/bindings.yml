@@ -2,11 +2,11 @@ name: Bindings Tests
 on:
   push:
     paths:
-      - bindings/go/**
+      - '**.go'
       - whisper.h
   pull_request:
     paths:
-      - bindings/go/**
+      - '**.go'
       - whisper.h
 
 jobs:
@@ -18,5 +18,4 @@ jobs:
           go-version: '^1.19'
       - uses: actions/checkout@v1
       - run: |
-          cd bindings/go
-          make test
+          go test ./...
