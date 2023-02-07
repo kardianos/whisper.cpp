@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	whisper "github.com/kardianos/whisper.cpp/tts"
+	whisper "github.com/kardianos/whisper.cpp/stt"
 )
 
 func main() {

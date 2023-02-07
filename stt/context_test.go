@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	whisper "github.com/kardianos/whisper.cpp/tts"
+	whisper "github.com/kardianos/whisper.cpp/stt"
 	assert "github.com/stretchr/testify/assert"
 )
 
